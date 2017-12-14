@@ -18,9 +18,9 @@ public class LoggingAspect {
 //		Circle circle = (Circle) joinPoint.getTarget();
 	}
 	
-	@Before("args(String)")
-	public void stringArgumentMethods(){
-		System.out.println("a method that takes String arguments has been called");
+	@Before("args(name)")
+	public void stringArgumentMethods(String name){
+		System.out.println("a method that takes String arguments has been called: " + name);
 	}
 	
 	
