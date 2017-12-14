@@ -5,6 +5,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
+import tw.com.nec.justin_chen.model.Circle;
+
 
 @Aspect
 public class LoggingAspect {
@@ -12,8 +14,15 @@ public class LoggingAspect {
 	// Advice (同時符合這兩個patterns，才執行)
 	@Before("allCircleMethods()")
 	public void LoggingAdvice(JoinPoint joinPoint){
-		System.out.println(joinPoint.toString());
+//		System.out.println(joinPoint.getTarget()); // tw.com.nec.justin_chen.model.Circle@3d100e15 -> 這個可以直接cast成物件
+//		Circle circle = (Circle) joinPoint.getTarget();
 	}
+	
+	@Before("args(String)")
+	public void stringArgumentMethods(){
+		System.out.println("a method that takes String arguments has been called");
+	}
+	
 	
 	// 以下定義pattern...
 	
