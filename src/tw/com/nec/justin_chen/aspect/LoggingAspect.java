@@ -8,7 +8,7 @@ import org.aspectj.lang.annotation.Before;
 public class LoggingAspect {
 
 	// Advice
-	@Before("execution(public String getName())")
+	@Before("execution(public String tw.com.nec.justin_chen.model.Circle.getName())")
 	public void LoggingAdvice(){
 		System.out.println("LoggingAspect.LoggingAdvice() called");
 	}
